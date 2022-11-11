@@ -1,0 +1,18 @@
+version: '3'
+services:
+  dbsqlserver:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    restart: "always"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=1234
+      - MSSQL_PID=Developer
+    ports: '1413:1413'
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #   ports: '3000:3000'
+
+  # backend:
+  #   build:
+  #     context: ./backend

@@ -1,0 +1,26 @@
+{
+  "dockerComposeFile": "../Docker-compose.yml",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "eamodio.gitlens",
+        "ms-python.python"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "latest",
+      "optimize": true,
+      "installTools": true,
+      "installJupyterlab": true
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "latest"
+    }
+  },
+  "postCreateCommand": "pipx install poetry && pip install pre-commit"
+}
